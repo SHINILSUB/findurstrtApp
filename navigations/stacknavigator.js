@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Add from "../pages/add";
@@ -16,9 +16,9 @@ const StackNavigator = () => {
       }}
     >
       <Stack.Screen name="Login" component={Login}/>
-      <Stack.Screen name="Add" component={Add} />
-      <Stack.Screen name="Main" component={Main} />
-      <Stack.Screen name="My" component={My} />
+      <Stack.Screen name="Add" component={Add}/>
+      <Stack.Screen name="Main" component={Main}/>
+      <Stack.Screen name="My" component={My}/>
     </Stack.Navigator>
   );
 };
