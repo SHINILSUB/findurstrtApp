@@ -1,10 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Add from "../pages/add";
 import Login from "../pages/login";
-import Main from "../pages/main";
-import My from "../pages/my";
+import Detail from '../pages/detail';
+import TabNavigator from './tabnavigator';
 
 const Stack = createStackNavigator();
 
@@ -15,10 +14,9 @@ const StackNavigator = () => {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="tabnavigator" component={TabNavigator}/>
       <Stack.Screen name="Login" component={Login}/>
-      <Stack.Screen name="Add" component={Add}/>
-      <Stack.Screen name="Main" component={Main}/>
-      <Stack.Screen name="My" component={My}/>
+      <Stack.Screen name="Detail" component={Detail}/>
     </Stack.Navigator>
   );
 };

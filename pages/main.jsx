@@ -1,19 +1,24 @@
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, View, Text, Alert } from 'react-native';
 
-const Main = ({route}) => {
-    return(
-    <View style={styles.container}>
-        <Text>this is home</Text>
-        <Text>{route.params.title}</Text>
+export default function Main({ navigation }) {
+  useEffect(() => {
+    const unsubscrbie = navigation.addListener('focus', (e) => {
+      Alert.alert('메인페이지에 들어왔군요!');
+    });
+    return unsubscrbie;
+  }, [navigation]);
+  return (
+    <View style={styles.contianer}>
+      <Text> MainPage </Text>
     </View>
-    )};
-    const styles = StyleSheet.create({
-        container: {
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        },
-      });
+  );
+}
 
-export default Main;
+const styles = StyleSheet.create({
+  contianer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

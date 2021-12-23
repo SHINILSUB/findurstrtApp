@@ -8,25 +8,23 @@ import {
 } from "react-native";
 
 const logo = require("../assets/logo.png");
-const vector = require("../assets/vector.png");
 
 const Login = ({ navigation }) => {
   const gomain = () => {
-    navigation.navigate("Main", { title: "로그인완료" });
+    navigation.navigate("Main");
   };
   return (
     <View style={styles.container}>
-      <Image source={vector} style={styles.vector} />
       <Image source={logo} style={styles.logo} />
       <View style={styles.loginbox}>
-        <Text style={styles.login}>Login</Text>
+        <Text style={styles.login}>LOGIN</Text>
         <TouchableHighlight onPress={gomain} underlayColor="white">
           <View style={styles.button}>
-            <Text style={styles.google}>google</Text>
+            <Text style={styles.google}>GOOGLE</Text>
           </View>
         </TouchableHighlight>
       </View>
-      <Text style={styles.prove}>Prove your strength</Text>
+      <Text style={styles.bottomText}>Prove your strength</Text>
     </View>
   );
 };
@@ -46,8 +44,8 @@ const styles = StyleSheet.create({
   logo: {
     alignSelf: "center",
     resizeMode: "contain",
-    width: 165,
-    marginBottom: 10
+    width: 270,
+    marginBottom: 40
   },
   loginbox: {
     justifyContent: "center",
@@ -75,12 +73,14 @@ const styles = StyleSheet.create({
   },
   google: {
     fontSize: 20,
+    fontWeight: 'bold',
     color: "white"
   },
-  prove: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#808080"
+  bottomText: {
+    fontSize: 25,
+    fontWeight: 'bold',
+    color: "#808080",
+    marginTop: 10
   
   }
 });
